@@ -65,6 +65,7 @@ interface ICollectFormProps {
   tokenizationAPI?: boolean;
   children?: JSX.Element[] | JSX.Element;
   onUpdateCallback?: (state: VGSCollectFormState | null) => void;
+  onBeforeSubmitCallback?: () => void;
   onSubmitCallback?: (status: any, resp: any) => void;
   onErrorCalback?: (errors: any) => void;
 }

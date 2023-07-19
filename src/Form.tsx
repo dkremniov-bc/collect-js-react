@@ -33,6 +33,7 @@ export function VGSCollectForm(props: ICollectFormProps) {
     submitParameters,
     tokenizationAPI = false,
     onUpdateCallback,
+    onBeforeSubmitCallback,
     onSubmitCallback,
     onErrorCalback,
     children
@@ -90,6 +91,10 @@ export function VGSCollectForm(props: ICollectFormProps) {
 
     if (!form) {
       throw new Error('@vgs/collect-js-react: VGS Collect form not found.')
+    }
+
+    if(onBeforeSubmitCallback) {
+      onBeforeSubmitCallback()
     }
 
     if (tokenizationAPI) {
